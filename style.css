@@ -1,0 +1,51 @@
+body{margin: 0px;}
+
+header h1{
+    text-align: center;
+    color: white;
+    background: darkblue;
+    height: 100px;
+}
+
+#rounds{
+    text-align: center;
+    color: greenyellow;
+    font-size: 20px;
+    background: blueviolet;
+}
+#Scores{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 50px 3px 50px 3px;
+    
+}
+#Scores div{
+    margin: 30px 30px 30px 30px;
+    color:red;
+    font-size: 22px;
+
+}
+.hands{
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    margin: 0px 5px 0px 5px;
+    
+}
+#hands{
+    display: flex;
+    justify-content: center;
+}
+#status{
+    margin-top: 20px;
+    margin-left: 850px;
+}
+
+#reset{
+    margin: 20px 20px 20px;
+    text-align: center;
+    justify-content: center;
+}
+.res{justify-content: center;
+display: flex;}
