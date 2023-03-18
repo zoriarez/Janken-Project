@@ -1,17 +1,20 @@
-body{margin: 0px;}
+body{
+    margin: 0px;
+    background-color: rgb(0, 0, 10);
+}
 
 header h1{
     text-align: center;
     color: white;
-    background: darkblue;
+    background: rgb(4, 4, 20);
     height: 100px;
 }
 
 #rounds{
     text-align: center;
-    color: greenyellow;
+    color: rgb(153, 255, 0);
     font-size: 20px;
-    background: blueviolet;
+    background: rgb(31, 11, 51);
 }
 #Scores{
     text-align: center;
@@ -39,7 +42,8 @@ header h1{
 }
 #status{
     margin-top: 20px;
-    margin-left: 850px;
+    margin-left: 530px;
+    color: aliceblue;
 }
 
 #reset{
@@ -47,5 +51,7 @@ header h1{
     text-align: center;
     justify-content: center;
 }
-.res{justify-content: center;
-display: flex;}
+.res{
+    justify-content: center;
+    display: flex;
+}
