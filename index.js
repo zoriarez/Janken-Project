@@ -4,15 +4,31 @@ const roundtotal = document.getElementById("roundCount");
 const playerScore = document.getElementById("Pscore");
 const compScore = document.getElementById("Cscore");
 let rounds= 0;
-
+let wins=0;
+let loss =0;
 
 const status = document.getElementById("status");
-const reset = document.getElementById("reset");
+
 let playerchoice;
 let choice;
+let conditon;
+let state=["win","lose","draw"];
 let hands=["Rock","Paper","Scissors"];
 let cpu= Math.floor(Math.random()*3);
 
+const reset = document.getElementById("reset").onclick= ()=>{
+    rounds=0;
+    wins=0
+    loss =0
+    roundtotal.innerHTML=`${rounds}`
+    playerScore.innerHTML=`${wins}`
+    compScore.innerHTML=`${loss}`
+    status.innerHTML=""
+
+}
+
+
+;
 const Guu = document.getElementById("Guu").onclick= ()=>{
     rounds ++
     choice =0;
@@ -20,6 +36,7 @@ const Guu = document.getElementById("Guu").onclick= ()=>{
     wincondition()
     console.log(rounds)
     roundtotal.innerHTML =`${rounds}`;
+    status.innerHTML = ` you chose ${hands[choice]} and the cpu chose ${hands[cpu]} you ${state[conditon]}`
 };
 
 const Paa = document.getElementById("Paa").onclick= ()=>{
@@ -29,6 +46,7 @@ const Paa = document.getElementById("Paa").onclick= ()=>{
     wincondition()
     console.log(rounds)
     roundtotal.innerHTML =`${rounds}`;
+    status.innerHTML = ` you chose ${hands[choice]} and the cpu chose ${hands[cpu]} you ${state[conditon]}`
 };
 
 
@@ -39,26 +57,41 @@ const Choki = document.getElementById("Choki").onclick= ()=>{
     wincondition()
     console.log(rounds)
     roundtotal.innerHTML =`${rounds}`;
+    status.innerHTML = ` you chose ${hands[choice]} and the cpu chose ${hands[cpu]} you ${state[conditon]}`
 };
 
 
 
+
 function janken(){
-console.log(hands[choice]);
-
-console.log(hands[cpu])
-
-}
-
-
-
-
-function wincondition(){
-    if(choice == 0 && cpu == 2 || choice ==1 && cpu == 0 || choice == 2 && cpu == 1 ){
-        console.log("win");
-    }else if(choice == 2 && cpu == 0 || choice ==0 && cpu == 1 || choice == 1 && cpu == 2){
-        console.log("lose");
-    }else{
-        console.log("Draw");
+    console.log(hands[choice]);
+    
+    console.log(hands[cpu])
+    
     }
-}
+    
+    
+    
+    
+    function wincondition(){
+        if(choice == 0 && cpu == 2 || choice ==1 && cpu == 0 || choice == 2 && cpu == 1 ){
+            console.log("win");
+            conditon=0;
+            wins ++;
+            playerScore.innerHTML= `${wins}`;
+            
+
+        }else if(choice == 2 && cpu == 0 || choice ==0 && cpu == 1 || choice == 1 && cpu == 2){
+            console.log("lose");
+            conditon=1;
+            loss ++;
+            compScore.innerHTML= `${loss}`;
+            
+        }else {
+            console.log("Draw");
+            conditon=2;
+            
+            
+        }
+    }
+    

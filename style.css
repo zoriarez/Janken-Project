@@ -24,7 +24,7 @@ header h1{
     
 }
 #Scores div{
-    margin: 30px 30px 30px 30px;
+    margin: 30px 5px 30px 5px;
     color:red;
     font-size: 22px;
 
@@ -40,10 +40,16 @@ header h1{
     display: flex;
     justify-content: center;
 }
-#status{
+.status{
     margin-top: 20px;
     margin-left: 530px;
     color: aliceblue;
+    display: flex;
+   
+    flex-direction: row;
+}
+.status div{
+    margin:2px;
 }
 
 #reset{
