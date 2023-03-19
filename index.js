@@ -3,12 +3,11 @@
 const roundtotal = document.getElementById("roundCount");
 const playerScore = document.getElementById("Pscore");
 const compScore = document.getElementById("Cscore");
+const status = document.getElementById("status");
+
 let rounds= 0;
 let wins=0;
 let loss =0;
-
-const status = document.getElementById("status");
-
 let playerchoice;
 let choice;
 let conditon;
@@ -63,13 +62,6 @@ const Choki = document.getElementById("Choki").onclick= ()=>{
 
 
 
-function janken(){
-    console.log(hands[choice]);
-    
-    console.log(hands[cpu])
-    
-    }
-    
     
     
     
@@ -94,4 +86,11 @@ function janken(){
             
         }
     }
+    /*
+function janken(){
+    console.log(hands[choice]);
+    
+    console.log(hands[cpu])
+    
+    }*/
     
