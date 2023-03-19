@@ -42,10 +42,10 @@ header h1{
 }
 .status{
     margin-top: 20px;
-    margin-left: 530px;
+    
     color: aliceblue;
     display: flex;
-   
+    justify-content:center;
     flex-direction: row;
 }
 .status div{
