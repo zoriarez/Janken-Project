@@ -15,6 +15,8 @@ let state=["win","lose","draw"];
 let hands=["Rock","Paper","Scissors"];
 let cpu= Math.floor(Math.random()*3);
 
+
+
 const reset = document.getElementById("reset").onclick= ()=>{
     rounds=0;
     wins=0
@@ -86,11 +88,11 @@ const Choki = document.getElementById("Choki").onclick= ()=>{
             
         }
     }
-    /*
+    
 function janken(){
     console.log(hands[choice]);
     
     console.log(hands[cpu])
     
-    }*/
+    }
     
