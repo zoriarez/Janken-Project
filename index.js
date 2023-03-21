@@ -4,6 +4,9 @@ const roundtotal = document.getElementById("roundCount");
 const playerScore = document.getElementById("Pscore");
 const compScore = document.getElementById("Cscore");
 const status = document.getElementById("status");
+const Guu = document.getElementById("Guu")
+const Paa = document.getElementById("Paa")
+const Choki = document.getElementById("Choki")
 
 let rounds= 0;
 let wins=0;
@@ -13,10 +16,17 @@ let choice;
 let conditon;
 let state=["win","lose","draw"];
 let hands=["Rock","Paper","Scissors"];
-let cpu= Math.floor(Math.random()*3);
 
 
 
+function reseter(){ rounds=0;
+    if(wins>loss){alert("you win")}else{alert("you lose")}
+    wins=0
+    loss =0
+    roundtotal.innerHTML=`${rounds}`
+    playerScore.innerHTML=`${wins}`
+    compScore.innerHTML=`${loss}`
+    status.innerHTML=""}
 const reset = document.getElementById("reset").onclick= ()=>{
     rounds=0;
     wins=0
@@ -27,47 +37,82 @@ const reset = document.getElementById("reset").onclick= ()=>{
     status.innerHTML=""
 
 }
+function game(){
+let totalrounds = prompt("pick number of rounds",)
+Guu.addEventListener('click',()=>{
+    choices(0)
+    if(rounds==totalrounds){
+        reseter()
+    }
+   });
+    Paa.addEventListener('click',()=>{
+    choices(1)
+    if(rounds==totalrounds){
+        
+        reseter()
+    }
+    });
+    Choki.addEventListener('click',()=>{
+    choices(2)
+    if(rounds==totalrounds){
+        reseter()
+    }
+    })
+    
+}
+
+ game()
 
 
-;
-const Guu = document.getElementById("Guu").onclick= ()=>{
+choices(choice)
+
+function choices(choice){
+var cpu= Math.floor(Math.random()*3);  
+switch(choice){
+    case 0:
     rounds ++
     choice =0;
-    janken()
-    wincondition()
+    
+    janken(choice,cpu)
+    wincondition(choice,cpu)
+    
     console.log(rounds)
     roundtotal.innerHTML =`${rounds}`;
     status.innerHTML = ` you chose ${hands[choice]} and the cpu chose ${hands[cpu]} you ${state[conditon]}`
-};
+    break;
 
-const Paa = document.getElementById("Paa").onclick= ()=>{
+    case 1:
     rounds++
-    choice =1;
-    janken()
-    wincondition()
+    
+    
+    janken(choice,cpu)
+    wincondition(choice,cpu)
+   
     console.log(rounds)
     roundtotal.innerHTML =`${rounds}`;
     status.innerHTML = ` you chose ${hands[choice]} and the cpu chose ${hands[cpu]} you ${state[conditon]}`
-};
+    break;
 
 
-const Choki = document.getElementById("Choki").onclick= ()=>{
+    case 2:
     rounds++
-    choice =2
-    janken()
-    wincondition()
+    
+    
+    janken(choice,cpu)
+    wincondition(choice,cpu)
+    
     console.log(rounds)
     roundtotal.innerHTML =`${rounds}`;
     status.innerHTML = ` you chose ${hands[choice]} and the cpu chose ${hands[cpu]} you ${state[conditon]}`
+    break;
 };
-
-
-
+}
 
     
     
     
-    function wincondition(){
+    function wincondition(choice,cpu){
+       
         if(choice == 0 && cpu == 2 || choice ==1 && cpu == 0 || choice == 2 && cpu == 1 ){
             console.log("win");
             conditon=0;
@@ -89,10 +134,53 @@ const Choki = document.getElementById("Choki").onclick= ()=>{
         }
     }
     
-function janken(){
+function janken(choice,cpu){
+ 
     console.log(hands[choice]);
     
     console.log(hands[cpu])
     
     }
     
+
+/*
+function choices(){
+
+    
+    const Guu = document.getElementById("Guu").onclick= ()=>{
+        rounds ++
+        choice =0;
+        
+        janken()
+        wincondition()
+        
+        console.log(rounds)
+        roundtotal.innerHTML =`${rounds}`;
+        status.innerHTML = ` you chose ${hands[choice]} and the cpu chose ${hands[cpu]} you ${state[conditon]}`
+    };
+    
+    const Paa = document.getElementById("Paa").onclick= ()=>{
+        rounds++
+        choice =1;
+        
+        janken()
+        wincondition()
+       
+        console.log(rounds)
+        roundtotal.innerHTML =`${rounds}`;
+        status.innerHTML = ` you chose ${hands[choice]} and the cpu chose ${hands[cpu]} you ${state[conditon]}`
+    };
+    
+    
+    const Choki = document.getElementById("Choki").onclick= ()=>{
+        rounds++
+        choice =2
+        
+        janken()
+        wincondition()
+        
+        console.log(rounds)
+        roundtotal.innerHTML =`${rounds}`;
+        status.innerHTML = ` you chose ${hands[choice]} and the cpu chose ${hands[cpu]} you ${state[conditon]}`
+    };
+    }*/
