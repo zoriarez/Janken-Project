@@ -16,7 +16,7 @@ let choice;
 let conditon;
 let state=["win","lose","draw"];
 let hands=["Rock","Paper","Scissors"];
-
+let totalrounds;
 
 
 function reseter(){ rounds=0;
@@ -28,17 +28,19 @@ function reseter(){ rounds=0;
     compScore.innerHTML=`${loss}`
     status.innerHTML=""}
 const reset = document.getElementById("reset").onclick= ()=>{
-    rounds=0;
+   rounds=0;
     wins=0
     loss =0
     roundtotal.innerHTML=`${rounds}`
     playerScore.innerHTML=`${wins}`
     compScore.innerHTML=`${loss}`
     status.innerHTML=""
+    totalrounds=0;
+     totalrounds = prompt("pick number of rounds",)
 
 }
 function game(){
-let totalrounds = prompt("pick number of rounds",)
+totalrounds = prompt("pick number of rounds",)
 Guu.addEventListener('click',()=>{
     choices(0)
     if(rounds==totalrounds){
