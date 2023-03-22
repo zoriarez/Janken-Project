@@ -3,6 +3,7 @@
 const roundtotal = document.getElementById("roundCount");
 const playerScore = document.getElementById("Pscore");
 const compScore = document.getElementById("Cscore");
+const drawscore = document.getElementById("Dscore");
 const status = document.getElementById("status");
 const Guu = document.getElementById("Guu")
 const Paa = document.getElementById("Paa")
@@ -11,6 +12,7 @@ const Choki = document.getElementById("Choki")
 let rounds= 0;
 let wins=0;
 let loss =0;
+let draw =0
 let playerchoice;
 let choice;
 let conditon;
@@ -20,20 +22,24 @@ let totalrounds;
 
 
 function reseter(){ rounds=0;
-    if(wins>loss){alert("you win")}else{alert("you lose")}
+    if(wins>loss){alert("you win")}else if(loss>wins){alert("you lose")}else{alert("Draw")}
     wins=0
     loss =0
+    draw =0
     roundtotal.innerHTML=`${rounds}`
     playerScore.innerHTML=`${wins}`
     compScore.innerHTML=`${loss}`
+    drawscore.innerHTML=`${draw}`
     status.innerHTML=""}
 const reset = document.getElementById("reset").onclick= ()=>{
    rounds=0;
     wins=0
     loss =0
+    draw = 0
     roundtotal.innerHTML=`${rounds}`
     playerScore.innerHTML=`${wins}`
     compScore.innerHTML=`${loss}`
+    drawscore.innerHTML=`${draw}`
     status.innerHTML=""
     totalrounds=0;
      totalrounds = prompt("pick number of rounds",)
@@ -129,9 +135,10 @@ switch(choice){
             compScore.innerHTML= `${loss}`;
             
         }else {
+            draw ++;
             console.log("Draw");
             conditon=2;
-            
+            drawscore.innerHTML=`${draw}`
             
         }
     }
